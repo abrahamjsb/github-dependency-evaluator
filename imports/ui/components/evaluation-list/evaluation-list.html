@@ -2,7 +2,7 @@
     <h3>Latest evaluations:</h3>
     <ul>
       {{#each ghrepositories}}
-        <li><a href="#" target="_blank">{{fullName}}</a></li>
+        <li><a href="{{pathFor 'App.details' _id=_id}}" >{{fullName}}</a></li>
       {{/each}}
     </ul>
 </template>

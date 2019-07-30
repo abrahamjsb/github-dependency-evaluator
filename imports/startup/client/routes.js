@@ -14,6 +14,13 @@ FlowRouter.route('/', {
   },
 });
 
+FlowRouter.route('/repo/:_id', {
+  name: 'App.details',
+  action() {
+    BlazeLayout.render('App_body', { main: 'ghrepository_details' });
+  },
+});
+
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('App_body', { main: 'App_notFound' });

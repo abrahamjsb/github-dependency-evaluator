@@ -1,3 +1,12 @@
 <template name="App_body">
-  {{> Template.dynamic template=main}}
+    <div class="app-layout">
+        <section class="nav-section">
+          {{> GhRepository_form}}
+          {{> GhRepositories_list}}
+        </section>
+        <section class="details-section">
+          {{> Template.dynamic template=main}}
+        </section>
+    </div>
+  
 </template>

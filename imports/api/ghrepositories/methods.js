@@ -10,7 +10,7 @@ Meteor.methods({
         let response;
         try {
             response = HTTP.get( `https://api.github.com/repos/${repositoryName}`, {headers: {"User-Agent": "abrahamjsb"}} );
-            console.log(response);
+
             if(response.statusCode == 200) {
                 const repositoryData = response.data;
                 const lastCommit = getLastCommit(repositoryName, repositoryData.default_branch);
@@ -29,18 +29,18 @@ Meteor.methods({
                     created_at: new Date(),
                     result: result
                 };
-                console.log(data);
-                return Repositories.insert(data, (error, result)=>{
+                
+                return Repositories.upsert({fullName: repositoryName}, {$set:{...data}}, (error, result)=>{
                     if(error){
                         console.log(error);
                         throw error;
                     } else {
-                        console.log(result0);
+                        console.log(result);
                     }
                 });
-        } else {
-            throw "An Error has ocurred during the request. Status code: ${response.statusCode}"
-        }
+            } else {
+                throw "An Error has ocurred during the request. The server returned the message: ${response.data.message}  Status code: ${response.statusCode}"
+            }
 
         } catch(e) {
             console.log(e);

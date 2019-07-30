@@ -1,0 +1,39 @@
+<template name="ghrepository_details">
+    <section class="repository-details">
+    {{#each ghrepository}}
+        <div class="repository-main-data">
+            <figure>
+                <img src="{{ avatarUrl }}" alt="{{ fullName }}">
+            </figure>
+            <ul>
+                <li>
+                    <span>Name:</span> {{ repositoryName }}
+                </li>
+                <li>
+                <span>Full repository name: </span>{{ fullName }}
+                </li>
+                <li>
+                <span>Author: </span>{{ author }}
+                </li>
+                <li>
+                <span>Default branch: </span>{{ defaultBranch }}
+                </li>
+                <li>
+                <span>Homepage: </span>{{ homepage }}
+                </li>
+                <li>
+                <span>License: </span>{{ license }}
+                </li>
+            </ul>
+        </div>
+        <ul class="evaluation-data">
+            <li> Open Issues: {{ issues }} </li>
+            <li> Last commit Date: {{ lastCommit.date }} </li>
+            <li> Last commit Author: {{ lastCommit.author }} </li>
+        </ul>
+        <h5> Last commit Message: </h5> 
+        <p>{{ lastCommit.message }}</p>
+        <h2 class="score-result">SCORE: {{ result }}</h2>
+    {{/each}}
+    </section>
+</template>

@@ -1,4 +1,4 @@
-#GITHUB DEPENDENCY EVALUATOR
+# GITHUB DEPENDENCY EVALUATOR
 
 This is a project aim to evaluate repositories to find out if it is stable and mature enough to use!
 
@@ -20,5 +20,5 @@ Github dependency evaluator is made on Meteor.js a full-stack javascript framewo
 4. Do functional and automated tests.
 5. Write documentation
 
-#License
+# License
 MIT

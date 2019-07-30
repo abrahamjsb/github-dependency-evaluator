@@ -19,7 +19,7 @@
                 <span>Default branch: </span>{{ defaultBranch }}
                 </li>
                 <li>
-                <span>Homepage: </span>{{ homepage }}
+                <span>Homepage: </span><a href="{{ homepage }}" target="_blank">{{ homepage }}</a>
                 </li>
                 <li>
                 <span>License: </span>{{ license }}
@@ -27,11 +27,11 @@
             </ul>
         </div>
         <ul class="evaluation-data">
-            <li> Open Issues: {{ issues }} </li>
-            <li> Last commit Date: {{ lastCommit.date }} </li>
-            <li> Last commit Author: {{ lastCommit.author }} </li>
+            <li> <strong>Open Issues:</strong> <br> {{ issues }} </li>
+            <li> <strong>Last commit Date:</strong> <br> {{ formatDate lastCommit.date }} </li>
+            <li> <strong>Last commit Author:</strong> <br> {{ lastCommit.author }} </li>
         </ul>
-        <h5> Last commit Message: </h5> 
+        <h4> Last commit Message: </h4> 
         <p>{{ lastCommit.message }}</p>
         <h2 class="score-result">SCORE: {{ result }}</h2>
     {{/each}}

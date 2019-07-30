@@ -23,6 +23,13 @@ Template.ghrepository_details.helpers({
         }
       },
 
+    formatDate(date) {
+        console.log(date)
+        const currentDate = new Date(date);
+        console.log(currentDate)
+        return (currentDate.getMonth() + 1) + "/" + currentDate.getDate() + "/" + currentDate.getFullYear();
+    }
+
 });
 
 Template.ghrepository_details.events({

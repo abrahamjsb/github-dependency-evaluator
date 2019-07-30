@@ -1,8 +1,10 @@
 <template name="GhRepository_form">
     <h1>Github Dependencies Evaluator</h1>
     <form id="ghrepository-form">
-        <label for="repository">Enter a github repository:</label>
-        <input type="text" id="repository" name="repository" placeholder="e.g user/reponame" required >
-        <input type="submit" value="Evaluate">
+        <label class="is-block" for="repository">Enter a github repository:</label>
+        <div class="input-container">
+            <input type="text" id="repository" class="input" name="repository" placeholder="e.g user/reponame" required >
+            <input type="submit" class="btn-submit" value="SEARCH">
+        </div>
     </form>
 </template>

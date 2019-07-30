@@ -1,8 +1,8 @@
 <template name="GhRepositories_list">
     <h3>Latest evaluations:</h3>
-    <ul>
+    <ul class="last-evaluation-container">
       {{#each ghrepositories}}
-        <li><a href="{{pathFor 'App.details' _id=_id}}" >{{fullName}}</a></li>
+        <li><a class="link-repositories" href="{{pathFor 'App.details' _id=_id}}" >{{fullName}}</a></li>
       {{/each}}
     </ul>
 </template>
